@@ -11,7 +11,7 @@ Website resmi **Transformer Coach Indonesia** — perusahaan konsultan bisnis, t
 ### 1. Clone
 
 ```bash
-git clone https://github.com/danidiamondland-cpu/transformercoachindonesia.git
+git clone https://github.com/myblueskycpny/transformercoachindonesia.git
 cd transformercoachindonesia
 ```
 
@@ -62,7 +62,7 @@ action="https://formspree.io/f/YOUR_FORM_ID"
 
 1. Push repo ke GitHub
 2. Buka [vercel.com/new](https://vercel.com/new)
-3. Import repo `danidiamondland-cpu/transformercoachindonesia`
+3. Import repo `myblueskycpny/transformercoachindonesia`
 4. **Framework preset:** Next.js (terdeteksi otomatis)
 5. Klik **Deploy** — selesai.
 
@@ -76,7 +76,7 @@ vercel
 
 #### Opsi C — Deploy Button
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/danidiamondland-cpu/transformercoachindonesia)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/myblueskycpny/transformercoachindonesia)
 
 ---
 
