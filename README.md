@@ -1,122 +1,72 @@
 # Transformer Coach Indonesia
 
-Website resmi **Transformer Coach Indonesia** — perusahaan konsultan bisnis, transformasi diri, dan pelatihan profesional yang berbasis di Jakarta, Indonesia.
+Website resmi **Transformer Coach Indonesia** — perusahaan konsultan bisnis, transformasi diri, dan pelatihan profesional berbasis di Jakarta, Indonesia.
 
-Dibangun dengan [Next.js](https://nextjs.org) (App Router), [React 19](https://react.dev), dan [Tailwind CSS v4](https://tailwindcss.com).
+**Stack:** Next.js 16 (App Router) · React 19 · Tailwind CSS v4 · Formspree · Vercel
 
-## Fitur
+---
 
--   Landing page dengan hero, statistik, testimoni, layanan, artikel, dan mitra
--   Halaman About, Business, CEO/Founder, Articles, Events, Gallery, FAQ, Contact
--   Form kontak terintegrasi dengan [Formspree](https://formspree.io)
--   Floating WhatsApp CTA
--   Galeri foto dengan lightbox
--   Desain responsif (mobile-first)
--   SEO & metadata lengkap
--   Keamanan HTTP headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
+## Panduan Lengkap: Clone → Setup → Deploy
 
-## Persyaratan
+### 1. Clone
 
--   **Node.js** v18.17 atau lebih baru
--   **npm**, **yarn**, **pnpm**, atau **bun**
+```bash
+git clone https://github.com/danidiamondland-cpu/transformercoachindonesia.git
+cd transformercoachindonesia
+```
 
-## Setup & Menjalankan di Lokal
+### 2. Install
 
-1.  **Clone repositori**
+```bash
+npm install
+```
 
-    ```bash
-    git clone https://github.com/danidiamondland-cpu/transformercoachindonesia.git
-    cd transformercoachindonesia
-    ```
+Atau dengan package manager lain: `yarn`, `pnpm`, `bun`.
 
-2.  **Install dependencies**
+### 3. Jalankan (Lokal)
 
-    ```bash
-    npm install
-    # atau
-    yarn install
-    # atau
-    pnpm install
-    # atau
-    bun install
-    ```
+```bash
+npm run dev
+```
 
-3.  **Jalankan development server**
+Buka [http://localhost:3000](http://localhost:3000) — setiap perubahan akan reload otomatis.
 
-    ```bash
-    npm run dev
-    # atau
-    yarn dev
-    # atau
-    pnpm dev
-    # atau
-    bun dev
-    ```
-
-4.  Buka [http://localhost:3000](http://localhost:3000) di browser.
-
-Halaman akan otomatis reload jika ada perubahan kode.
-
-### Production Build
+### 4. Production Build (Lokal)
 
 ```bash
 npm run build
 npm start
 ```
 
-### Linting
+### 5. Linting
 
 ```bash
 npm run lint
 ```
 
-## Struktur Folder
+### 6. Konfigurasi Form Kontak (Opsional)
 
-```
-src/
-├── app/
-│   ├── about/page.js       # /about
-│   ├── articles/page.js    # /articles
-│   ├── business/page.js    # /business
-│   ├── ceo/page.js         # /ceo
-│   ├── contact/page.js     # /contact
-│   ├── events/page.js      # /events
-│   ├── faq/page.js         # /faq
-│   ├── gallery/page.js     # /gallery
-│   ├── globals.css         # Tailwind v4 entry
-│   ├── layout.js           # Root layout
-│   └── page.js             # Homepage
-├── components/
-│   ├── Navbar.js
-│   ├── Footer.js
-│   └── WhatsAppButton.js
-public/
-├── event-documentation/    # Foto dokumentasi event
-├── founders/               # Foto CEO & founder
-└── mitra/                  # Logo mitra/partner
-```
-
-## Konfigurasi Environment
-
-Proyek ini **tidak memerlukan environment variables** untuk berjalan.
-
-Untuk form kontoh, buka `src/app/contact/page.js` dan ganti endpoint Formspree:
+Buka `src/app/contact/page.js` dan ganti `your-form-id` dengan ID Formspree kamu:
 
 ```js
 action="https://formspree.io/f/YOUR_FORM_ID"
 ```
 
-## Deploy ke Vercel
+> **Catatan:** Tidak ada environment variable yang wajib diisi. Proyek ini zero-env.
 
-### Opsi 1: Deploy Otomatis via Git
+---
 
-1. Push repositori ke GitHub/GitLab/Bitbucket.
-2. Masuk ke [Vercel](https://vercel.com) dan klik **Add New → Project**.
-3. Import repositori ini.
-4. Vercel akan mendeteksi Next.js secara otomatis — **tidak perlu ubah pengaturan**.
-5. Klik **Deploy**.
+### 7. Deploy ke Vercel
 
-### Opsi 2: Deploy via Vercel CLI
+#### Opsi A — Via Git (Rekomendasi)
+
+1. Push repo ke GitHub
+2. Buka [vercel.com/new](https://vercel.com/new)
+3. Import repo `danidiamondland-cpu/transformercoachindonesia`
+4. **Framework preset:** Next.js (terdeteksi otomatis)
+5. Klik **Deploy** — selesai.
+
+#### Opsi B — Via CLI
 
 ```bash
 npm i -g vercel
@@ -124,22 +74,50 @@ vercel login
 vercel
 ```
 
-### Opsi 3: Deploy Langsung
+#### Opsi C — Deploy Button
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/danidiamondland-cpu/transformercoachindonesia)
 
-## Tech Stack
+---
 
-| Teknologi            | Deskripsi                          |
-| -------------------- | ---------------------------------- |
-| Next.js 16           | React framework (App Router)       |
-| React 19             | UI library                         |
-| Tailwind CSS v4      | Utility-first CSS                  |
-| Formspree            | Backend form handler               |
-| Vercel               | Hosting & deployment               |
+## Struktur Proyek
+
+```
+src/
+├── app/               # App Router pages
+│   ├── about/page.js
+│   ├── articles/page.js
+│   ├── business/page.js
+│   ├── ceo/page.js
+│   ├── contact/page.js
+│   ├── events/page.js
+│   ├── faq/page.js
+│   ├── gallery/page.js
+│   ├── layout.js      # Root layout (Navbar + Footer + WA)
+│   ├── page.js        # Homepage
+│   └── globals.css    # Tailwind v4
+└── components/
+    ├── Navbar.js
+    ├── Footer.js
+    └── WhatsAppButton.js
+```
+
+## Halaman
+
+| Route        | Halaman                  |
+| ------------ | ------------------------ |
+| `/`          | Home (hero, stats, testimoni, layanan, artikel, mitra) |
+| `/about`     | Visi, misi, nilai, program |
+| `/business`  | 6 layanan bisnis         |
+| `/ceo`       | Profil CEO & COO         |
+| `/articles`  | 6 artikel motivasi       |
+| `/events`    | 6 event + galeri foto    |
+| `/gallery`   | Galeri foto + lightbox   |
+| `/faq`       | 8 FAQ accordion          |
+| `/contact`   | Form kontak + info       |
 
 ## Kontak
 
--   **Email:** info@transformercoachindonesia.com
--   **WhatsApp:** +62 819-5320-1881
--   **Website:** [transformercoachindonesia.com](https://transformercoachindonesia.com)
+- **Email:** info@transformercoachindonesia.com
+- **WhatsApp:** +62 819-5320-1881
+- **Website:** [transformercoachindonesia.com](https://transformercoachindonesia.com)
