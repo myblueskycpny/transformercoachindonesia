@@ -115,9 +115,3 @@ src/
 | `/gallery`   | Galeri foto + lightbox   |
 | `/faq`       | 8 FAQ accordion          |
 | `/contact`   | Form kontak + info       |
-
-## Kontak
-
-- **Email:** info@transformercoachindonesia.com
-- **WhatsApp:** +62 819-5320-1881
-- **Website:** [transformercoachindonesia.com](https://transformercoachindonesia.com)
